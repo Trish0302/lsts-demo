@@ -1,3 +1,3 @@
-python3.9 pip install django
-python3.9 -m pip install -r requirements.txt
-python3.9 manage.py collectstatic --noinput
+python3.10 pip install django
+python3.10 -m pip install -r requirements.txt
+python3.10 manage.py collectstatic --noinput
