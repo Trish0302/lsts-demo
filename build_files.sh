@@ -1,3 +1,3 @@
-python pip install django
-python -m pip install -r requirements.txt
-python manage.py collectstatic --noinput
+python3.12 pip install django
+python3.12 -m pip install -r requirements.txt
+python3.12 manage.py collectstatic --noinput
