@@ -11,7 +11,7 @@
   }],
   "routes": [
     {
-      "src": "/lesson/static/(.*)",
+      "src": "/static/(.*)",
       "dest": "/static/$1"
     },
     {
