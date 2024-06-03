@@ -1,20 +1,20 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 <div
-  class="flex flex-col justify-center h-[90vh] gap-6 text-center items-center"
+  class="flex flex-col justify-center h-[80vh] gap-6 text-center items-center"
 >
-  <h1 class="text-6xl font-extrabold">
+  <h1 class="text-6xl font-extrabold flex flex-col gap-1">
     TWO-DIMENSIONAL ARRAY
     <span
       style="
         background-image: linear-gradient(
-          to left,
+          to right,
           violet,
           indigo,
+          red,
+          yellow,
           blue,
           green,
-          #d2d20f,
-          #eb9c0b,
-          red
+          #d2d20f
         );
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -22,7 +22,7 @@
       >IN PRACTICE</span
     >
   </h1>
-  <span class="text-gray-500 italic w-5/6 text-lg"
+  <span class="text-gray-500 italic w-4/6 text-lg"
     >This website is originally in the purpose of conserving educational
     resources which is relevant to application of the two-dimensional array. A
     wide range of materials including learning content, program implementation
@@ -30,7 +30,7 @@
   </span>
   <a
     href="/implementation"
-    class="bg-blue-700 text-white font-semibold py-4 px-10 border border-gray-400 rounded-full shadow mt-20 flex gap-3"
+    class="bg-blue-700 text-white font-semibold py-4 px-10 border border-gray-400 rounded-full shadow mt-12 flex gap-3"
   >
     <span>See coding</span>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white">
@@ -40,26 +40,24 @@
     </svg>
   </a>
 </div>
-<div>
+<div class="grid grid-cols-3 gap-4 mt-4">
+  {% for content in contents %}
   <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
     <a href="/learning_content">
       <img class="rounded-t-lg" src="{% static 'life-photo.jpg' %}" alt="" />
     </a>
     <div class="p-5">
       <a href="/learning_content">
-        <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-        >
-          Learning Content
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+          {{ content.title }}
         </h5>
       </a>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        The specialised section containing content which accommodates knowledge
-        base for all activities.
+      <p class="mb-3 font-normal text-gray-700 italic">
+        {{ content.description }}
       </p>
       <a
         href="/learning_content"
-        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
       >
         Read more
         <svg
@@ -80,5 +78,6 @@
       </a>
     </div>
   </div>
+  {% endfor %}
 </div>
 {% endblock content %}

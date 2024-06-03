@@ -1,4 +1,27 @@
-{% extends "base.html" %} {% block content %}
-<h2>Content for My App</h2>
-<p>Stuff etc etc.</p>
-{% endblock content %}
+{% extends "base.html" %} {% block content %} {% load static %}
+<h1 class="text-3xl font-extrabold mb-6">Knowledge Base</h1>
+{% for content in contents %}
+<div class="mb-5">
+  <h2 class="text-2xl font-extrabold mb-4">{{ content.h2 }}</h2>
+  {% for subContent in content.h3 %}
+  <h3 class="text-xl font-extrabold mb-3">{{ subContent.title }}</h3>
+  <div
+    class="flex flex-col gap-1 text-justify indent-10 me-44 mb-3 items-center"
+  >
+    {% for innerContent in subContent.paragraphs %}
+    <p class="w-full">{{ innerContent }}</p>
+    {% endfor %} {% if subContent.media %}
+    <img
+      class="rounded-lg mt-2"
+      src="{% static subContent.media.file_name %}"
+      width="700px"
+      alt=""
+    />
+    <span class="text-gray-400 italic text-sm"
+      >{{subContent.media.description}}</span
+    >
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endfor %} {% endblock content %}
