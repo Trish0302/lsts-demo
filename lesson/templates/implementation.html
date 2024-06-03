@@ -1,3 +1,13 @@
 {% extends "base.html" %} {% block content %}
-<h2>implementation</h2>
+<h1 class="text-3xl font-extrabold mb-5">Program Implementation</h1>
+<pre><code class="python">import cv2
+from google.colab.patches import cv2_imshow
+
+image = cv2.imread('/content/grayscale-1.png')
+
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+cv2_imshow(gray_image)
+cv2.waitKey(0)
+</code></pre>
 {% endblock content %}
