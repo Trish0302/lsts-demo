@@ -7,14 +7,20 @@ def index(request):
     contents = [
         {
             "title": "Learning Content",
+            "href": "/learning_content",
+            "thumbnail": "welcome-box-1.jpg",
             "description": "The specialised section containing content which accommodates knowledge base for all activities.",
         },
         {
             "title": "Program Implementation",
+            "href": "/implementation",
+            "thumbnail": "welcome-box-2.jpg",
             "description": "Source code for Digital Image Processing and Tic-tac-toe program is visually demonstrated.",
         },
         {
             "title": "PDF Viewer",
+            "href": "/pdf_viewer",
+            "thumbnail": "welcome-box-3.jpg",
             "description": "A portable feature that provide assistance to users through displaying lesson representation.",
         },
     ]
