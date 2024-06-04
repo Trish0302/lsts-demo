@@ -31,9 +31,11 @@ def learning_content(request):
     contents = [
         {
             "h2": "Digital Image Processing (DIP)",
+            "id": "dip",
             "h3": [
                 {
                     "title": "Overview",
+                    "id": "dip-overview",
                     "paragraphs": [
                         "Digital image is a presentation of a common image that is stored and processed by a digital machine through an algorithm. By default, every digital image is combined from a number of indivisible elements. These elements are called pixels. In other words, a pixel is a smallest unit that establishes a digital image.",
                         "In programming, a digital image is stored as a two-dimensional array arranged in rows and columns. Every pixel in a digital image has its own (x, y) coordinate. These coordinates describe the intensity at the location that each pixel resides in.",
@@ -45,6 +47,7 @@ def learning_content(request):
                 },
                 {
                     "title": "Types of digital images",
+                    "id": "dip-categories",
                     "paragraphs": [
                         "Typically, there are three types of digital images which are binary image, grayscale image and RGB image. In common grayscale images, each pixel expresses its gray level in a total of 256 different levels of gray levels. The accepted values of gray level vary from 0 to 255. At the top and bottom boundaries, a pixel intensity of 0 represents the black color and pixel intensity of 255 describes the white color. Other between values demonstrates how the light intensity fluctuates linearly."
                     ],
@@ -55,6 +58,7 @@ def learning_content(request):
                 },
                 {
                     "title": "Digital images in Python",
+                    "id": "dip-python",
                     "paragraphs": [
                         "By using Python, programmers could easily extract a specific digital image into a two-dimensional array. Additionally, there are some built-in features that Python helps developers to show the image as per demand."
                     ],
@@ -64,9 +68,11 @@ def learning_content(request):
         },
         {
             "h2": "Tic-tac-toe",
+            "id": "tic-tac-toe",
             "h3": [
                 {
                     "title": "Specifications",
+                    "id": "tic-tac-toe-specifications",
                     "paragraphs": [
                         "In this program, two people act as two users participating in a debate. One user plays “X” and another user plays “Y”. They mark their respective symbols in turn on a grid of three-by-three cells. In every turn, users enter their row and column location in order to mark their own choice.",
                         "The program terminates whenever 9 turns are passed. The board is displayed after every turn. Every user needs to make sure that their selection satisfies two requirements:",
@@ -76,6 +82,7 @@ def learning_content(request):
                 },
                 {
                     "title": "Flowchart",
+                    "id": "tic-tac-toe-flowchart",
                     "paragraphs": [],
                     "media": {
                         "file_name": "tic-tac-toe-flowchart.png",
@@ -84,6 +91,7 @@ def learning_content(request):
                 },
                 {
                     "title": "Implementation",
+                    "id": "tic-tac-toe-implementation",
                     "paragraphs": [],
                     "media": {
                         "file_name": "tic-tac-toe-code.png",
@@ -95,15 +103,18 @@ def learning_content(request):
         },
         {
             "h2": "Number of Islands",
+            "id": "number-of-islands",
             "h3": [
                 {
                     "title": "Specifications",
+                    "id": "number-of-islands-specifications",
                     "paragraphs": [
                         "Given a two-dimensional array which was filled by two specified values: 0 and 1. Value 0 represents water and value 1 describes land. An island is defined by the maximum numbers of connected cells with value 1. All islands are surrounded by water (which is value 0)."
                     ],
                 },
                 {
                     "title": "Flowchart",
+                    "id": "number-of-islands-flowchart",
                     "paragraphs": [],
                     "media": {
                         "file_name": "number-of-islands.png",

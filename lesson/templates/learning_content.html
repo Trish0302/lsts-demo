@@ -1,27 +1,73 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 <h1 class="text-3xl font-extrabold mb-6">Knowledge Base</h1>
-{% for content in contents %}
-<div class="mb-5">
-  <h2 class="text-2xl font-extrabold mb-4">{{ content.h2 }}</h2>
-  {% for subContent in content.h3 %}
-  <h3 class="text-xl font-extrabold mb-3">{{ subContent.title }}</h3>
-  <div
-    class="flex flex-col gap-1 text-justify indent-10 me-44 mb-3 items-center"
-  >
-    {% for innerContent in subContent.paragraphs %}
-    <p class="w-full">{{ innerContent }}</p>
-    {% endfor %} {% if subContent.media %}
-    <img
-      class="rounded-lg mt-2"
-      src="{% static subContent.media.file_name %}"
-      width="700px"
-      alt=""
-    />
-    <span class="text-gray-400 italic text-sm"
-      >{{subContent.media.description}}</span
-    >
-    {% endif %}
+<div class="flex gap-10">
+  <div class="w-3/4">
+    {% for content in contents %}
+    <div class="mb-5">
+      <h2
+        class="text-2xl font-extrabold mb-4 scroll-mt-20"
+        id="{{ content.id }}"
+      >
+        {{ content.h2 }}
+      </h2>
+      {% for subContent in content.h3 %}
+      <h3
+        class="text-xl font-extrabold mb-3 scroll-mt-20"
+        id="{{ subContent.id }}"
+      >
+        {{ subContent.title }}
+      </h3>
+      <div class="flex flex-col gap-1 text-justify indent-10 mb-3 items-center">
+        {% for innerContent in subContent.paragraphs %}
+        <p class="w-full">{{ innerContent }}</p>
+        {% endfor %} {% if subContent.media %}
+        <img
+          class="rounded-lg mt-2"
+          src="{% static subContent.media.file_name %}"
+          width="700px"
+          alt=""
+        />
+        <span class="text-gray-400 italic text-sm"
+          >{{subContent.media.description}}</span
+        >
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
+  <div class="w-1/4">
+    <ul
+      class="text-sm bg-gray-100 leading-6 py-6 px-8 rounded-lg text-slate-700"
+    >
+      {% for content in contents %}
+      <li>
+        <a href="#{{ content.id }}" class="block py-1 font-medium font-medium"
+          >{{content.h2}}
+        </a>
+      </li>
+
+      {% for subContent in content.h3 %}
+      <li class="ml-4">
+        <a href="#{{ subContent.id }}" class="group flex items-start py-1">
+          <svg
+            width="3"
+            height="24"
+            viewBox="0 -9 3 24"
+            class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600"
+          >
+            <path
+              d="M0 0L3 3L0 6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            ></path></svg
+          >{{ subContent.title }}
+        </a>
+      </li>
+      {% endfor %} {% endfor %}
+    </ul>
+  </div>
 </div>
-{% endfor %} {% endblock content %}
+{% endblock content %}
