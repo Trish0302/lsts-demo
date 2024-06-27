@@ -4,7 +4,7 @@ const navBarToggleBtn = document.getElementById("navbar-toggle-btn");
 const navBar = document.getElementById("navbar-sticky");
 
 navBarToggleBtn.addEventListener("click", () => {
-  navBar.classList.toggle("hidden");
+  navBar.classList.toggle("max-md:hidden");
 });
 
 document.querySelectorAll("ul li a").forEach((navLink) => {
