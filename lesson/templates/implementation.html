@@ -1,9 +1,11 @@
 {% extends "base.html" %} {% block content %}
-<h1 class="text-3xl font-extrabold mb-6">Program Implementation</h1>
-<div class="mb-5">
+<h1 class="text-3xl font-extrabold mb-6 px-4 md:px-16">
+  Program Implementation
+</h1>
+<div class="mb-5 px-4 md:px-16">
   <h2 class="text-2xl font-extrabold mb-4">Digital Image Processing (DIP)</h2>
-  <div class="mx-10 flex flex-col gap-3">
-  <pre><code class="python rounded-lg">import cv2
+  <div class="md:mx-10 flex flex-col gap-3 text-sm md:text-base">
+    <pre><code class="python rounded-lg">import cv2
 from google.colab.patches import cv2_imshow
 
 image = cv2.imread('/content/grayscale-1.png')
@@ -12,12 +14,12 @@ gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 cv2_imshow(gray_image)
 cv2.waitKey(0)</code></pre>
-  <pre><code class="python rounded-lg">print(gray_image)</code></pre>
+    <pre><code class="python rounded-lg">print(gray_image)</code></pre>
   </div>
 </div>
-<div class="mb-5">
+<div class="mb-5 px-4 md:px-16">
   <h2 class="text-2xl font-extrabold mb-4">Tic-tac-toe</h2>
-  <div class="mx-10 flex flex-col gap-3">
+  <div class="md:mx-10 flex flex-col gap-3 text-sm md:text-base">
     <pre><code class="python rounded-lg">board = [[" ", " ", " "],
         [" ", " ", " "],
         [" ", " ", " "]]
