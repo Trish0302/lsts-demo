@@ -1,8 +1,10 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 <div
-  class="flex flex-col justify-center h-[80vh] gap-6 text-center items-center"
+  class="flex flex-col justify-center gap-6 text-center items-center mb-5 md:h-[80vh]"
 >
-  <h1 class="text-6xl font-extrabold flex flex-col gap-1">
+  <h1
+    class="text-4xl md:text-5xl lg:text-6xl font-extrabold flex flex-col gap-1"
+  >
     TWO-DIMENSIONAL ARRAY
     <span
       style="
@@ -22,7 +24,8 @@
       >IN PRACTICE</span
     >
   </h1>
-  <span class="text-gray-500 italic w-4/6 text-lg"
+  <span
+    class="text-gray-500 italic w-5/6 md:w-4/6 text-sm md:text-base lg:text-lg"
     >This website is originally in the purpose of conserving educational
     resources which is relevant to application of the two-dimensional array. A
     wide range of materials including learning content, program implementation
@@ -30,9 +33,9 @@
   </span>
   <a
     href="/implementation"
-    class="bg-blue-700 text-white font-semibold py-4 px-10 border border-gray-400 rounded-full shadow mt-12 flex gap-3"
+    class="bg-blue-700 text-white font-semibold py-3 px-7 md:py-4 md:px-10 border border-gray-400 rounded-full shadow md:mt-12 flex gap-3"
   >
-    <span>See coding</span>
+    <span class="text-sm md:text-base">See coding</span>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white">
       <path
         d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"
@@ -40,7 +43,7 @@
     </svg>
   </a>
 </div>
-<div class="grid grid-cols-3 gap-10 mt-4">
+<div class="grid grid-cols-1 md:grid-cols-3 max-md:mx-3 gap-10 mt-4">
   {% for content in contents %}
   <div class="bg-white border border-gray-200 rounded-lg shadow">
     <div class="h-96">
@@ -53,18 +56,20 @@
         />
       </a>
     </div>
-    <div class="p-5">
+    <div class="p-3 md:p-5">
       <a href="{{content.href }}">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+        <h5
+          class="mb-2 text-lg md:text-xl lg:text-2xl font-bold tracking-tight text-gray-900"
+        >
           {{ content.title }}
         </h5>
       </a>
-      <p class="mb-3 font-normal text-gray-700 italic">
+      <p class="mb-3 text-gray-700 italic text-sm md:text-base">
         {{ content.description }}
       </p>
       <a
         href="{{content.href }}"
-        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800"
+        class="inline-flex items-center px-3 py-2 text-xs md:text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800"
       >
         Read more
         <svg
